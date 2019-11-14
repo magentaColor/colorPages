@@ -2,19 +2,19 @@
     <header>
         <script src="https://acosvo--acosvoform.my.salesforce.com/lightning/lightning.out.js"></script>
         <style>
-            .colorInput {
+            .colorInput > div > input {
                 background: rebeccapurple;
             }
         </style>
     </header>
 
     <div id="lightning"></div>
-    
+
     <script>
         const LIGHTNING_OUT_APP = "c:membershipForms";
         const COMPONENT_TO_RENDER = "c:membershipForm";
         const COMMUNITY_ENDPOINT = "https://acosvoform-acosvo.cs108.force.com/AcosvoPayLex";
-        const COMPONENT_PARAMETERS = {membershipType : 'Full'};
+        const COMPONENT_PARAMETERS = { membershipType: "Full" };
         const DIV_TO_RENDER_IN_ID = "lightning";
 
         $Lightning.use(
