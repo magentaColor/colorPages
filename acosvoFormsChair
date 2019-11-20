@@ -1,0 +1,34 @@
+<html>
+    <header>
+        <script src="https://acosvo--acosvoform.my.salesforce.com/lightning/lightning.out.js"></script>
+        <style>
+            #lightning {
+                max-width: 880px;
+            }
+        </style>
+    </header>
+
+    <div id="lightning"></div>
+
+    <script>
+        const LIGHTNING_OUT_APP = "c:membershipForms";
+        const COMPONENT_TO_RENDER = "c:MembershipFormStyler";
+        const COMMUNITY_ENDPOINT = "https://acosvoform-acosvo.cs108.force.com/AcosvoPayLex";
+        const COMPONENT_PARAMETERS = { membershipType: "Chair" };
+        const DIV_TO_RENDER_IN_ID = "lightning";
+        $Lightning.use(
+            LIGHTNING_OUT_APP,
+            function() {
+                $Lightning.createComponent(
+                    COMPONENT_TO_RENDER,
+                    COMPONENT_PARAMETERS,
+                    DIV_TO_RENDER_IN_ID,
+                    function() {
+                        console.log(`Rendered ${COMPONENT_TO_RENDER} via Lightning Out`);
+                    }
+                );
+            },
+            COMMUNITY_ENDPOINT
+        );
+    </script>
+</html>
