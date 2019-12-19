@@ -1,0 +1,29 @@
+<html>
+    <header>
+        <script src="https://myDomain.my.salesforce.com/lightning/lightning.out.js"></script>
+    </header>
+
+    <div id="lightning"></div>
+
+    <script>
+        const LIGHTNING_OUT_APP = "";
+        const COMPONENT_TO_RENDER = "";
+        const COMMUNITY_ENDPOINT = "";
+        const COMPONENT_PARAMETERS = {};
+        const DIV_TO_RENDER_IN_ID = "lightning";
+        $Lightning.use(
+            LIGHTNING_OUT_APP,
+            function() {
+                $Lightning.createComponent(
+                    COMPONENT_TO_RENDER,
+                    COMPONENT_PARAMETERS,
+                    DIV_TO_RENDER_IN_ID,
+                    function() {
+                        console.log(`Rendered ${COMPONENT_TO_RENDER} via Lightning Out`);
+                    }
+                );
+            },
+            COMMUNITY_ENDPOINT
+        );
+    </script>
+</html>
