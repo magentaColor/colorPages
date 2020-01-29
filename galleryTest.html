@@ -1,0 +1,30 @@
+<html>
+    <header>
+        <script src="https://gallerytest1-dev-ed.my.salesforce.com/lightning/lightning.out.js"></script>
+    </header>
+
+    <div id="lightning"></div>
+
+    <script>
+        const LIGHTNING_OUT_APP = "c:GalleryOut";
+        const COMPONENT_TO_RENDER = "color_gallery:dynamicForm";
+        const COMMUNITY_ENDPOINT = "https://gallerytest1-developer-edition.um1.force.com";
+        const COMPONENT_PARAMETERS = {};
+        const DIV_TO_RENDER_IN_ID = "lightning";
+
+        $Lightning.use(
+            LIGHTNING_OUT_APP,
+            function() {
+                $Lightning.createComponent(
+                    COMPONENT_TO_RENDER,
+                    COMPONENT_PARAMETERS,
+                    DIV_TO_RENDER_IN_ID,
+                    function() {
+                        console.log(`Rendered ${COMPONENT_TO_RENDER} via Lightning Out`);
+                    }
+                );
+            },
+            COMMUNITY_ENDPOINT
+        );
+    </script>
+</html>
